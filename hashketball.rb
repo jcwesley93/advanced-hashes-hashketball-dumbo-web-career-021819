@@ -183,7 +183,7 @@ end
 end
 
 def big_shoe_rebounds
-  biggest_shoe = 0 
+  biggest_shoe = 0
   rebounds = 0
     game_hash.each do |team, attributes|
       #First Level - home or away? , attributes
@@ -204,4 +204,24 @@ def big_shoe_rebounds
   end
   end
   rebounds
+end
+
+
+def slam_dunk
+  game_hash.each do |team, attribute|
+    attributes.each do |key, value|
+      if key == :players
+        value.each do |player, stat|
+          stat.each do |type, value|
+            if type == :slam_dunk
+              value += 1
+            end
+          end
+        end
+      end
+    end
+  end
+  
+
+
 end
